@@ -1,4 +1,4 @@
-# CS 446 Winter - Programming Assignment 1. [100 points]#
+# C4.5 Implementation [100 points]#
 
 In this assignment you will be implementing the C4.5 decision tree algorithm and running it on real emails to train a spam filter.
 
