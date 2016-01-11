@@ -4,6 +4,11 @@ In this assignment you will be implementing the C4.5 decision tree algorithm and
 
 [https://en.wikipedia.org/wiki/C4.5_algorithm](https://en.wikipedia.org/wiki/C4.5_algorithm)
 
+First get the assignment by running:
+    
+    git clone https://github.com/pjreddie/C4.5-Homework
+    cd C4.5-Homework
+
 You will be modifying the file `tree.py`. Tests for your program are in `test.py`. To test your implementation, run:
 
     python test.py
@@ -63,6 +68,11 @@ Fill in the `c45` function to do the following:
 Once all the basic tests pass it's time to run your algorithm on real data. Download and unzip the spam dataset:
 
 [http://pjreddie.com/media/files/spam.tar.gz](http://pjreddie.com/media/files/spam.tar.gz)
+
+You can do this with the commands:
+
+    wget http://pjreddie.com/media/files/spam.tar.gz
+    tar xzf spam.tar.gz
 
 Also open `test.py` and comment out or delete line 45 so that it runs the final test. This test will train your decision tree on about 20,000 emails labelled as spam and not spam ("ham"). We have set up the the data loader to load the emails and calculate character statistics as features (e.g. the frequency of the letter 'a' or of a '?').
 
