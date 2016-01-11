@@ -15,6 +15,8 @@ You will be modifying the file `tree.py`. Tests for your program are in `test.py
 
 You will see the number of tests your implementation passes and any problems that arise.
 
+Note: Please use Python 2.7 for the assignment and only modify the `tree.py` file. This is the only file you will be submitting.
+
 ### Splitting The Data [10 points]###
 
 Decision trees work by partitioning or splitting the input space into smaller regions. Your program will have to split a dataset into two pieces by determining which points fall on which side of a threshold for some feature.
@@ -34,9 +36,9 @@ Fill in the `split_data` function so that `left` contains all points whose value
 
 ### Calculating Entropy [10 points]###
 
-The C4.5 algorithm finds partitions for the data that minimize entropy so we need to be able to calculate entropy. Entropy is given as the sum across all events (in this case classes) of the probability of that event times the log probability of that event:
+The C4.5 algorithm finds partitions for the data that minimize entropy so we need to be able to calculate entropy. Entropy is given as the negative sum across all events (in this case classes) of the probability of that event times the log probability of that event:
 
-    sum(prob(event) * log(prob(event)))
+    - sum(prob(event) * log(prob(event)))
 
 To calculate the probabilities for each class in a given dataset we first need to count the occurences of each class. Fill in `count_labels` to return a dictionary containing the number of times each label occurs in the data.
 
@@ -85,4 +87,12 @@ Tune your `submission` function to get your accuracy over 75% on the validation 
 Finalize your `submission` function to take a train and test data and return a list of predictions for the test data. You can stick with just training a single decision tree, you could try modifying the c45 algorithm, you could average predictions across multiple decision trees, or you could come up with something new!
 
 After the homework deadline we will run all of your submissions on a test dataset to see who can train the best model. The test data will be different than either the training or validation data so make sure you don't overfit your model too much. Extra points on the homework will be awarded to people with the highest performing algorithms.
+
+### Submitting ###
+
+Submit your modified `tree.py` file to the class dropbox here:
+
+[https://catalyst.uw.edu/collectit/assignment/farhadi/37186/149544](https://catalyst.uw.edu/collectit/assignment/farhadi/37186/149544)
+
+
 
