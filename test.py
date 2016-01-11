@@ -50,7 +50,7 @@ class TreeTest(unittest.TestCase):
         acc = accuracy(valid, preds)
         print
         print "Your current accuracy is:", acc
-        self.assertGreater(acc, .7)
+        self.assertGreater(acc, .75)
         
 if __name__ == '__main__':
     unittest.main()

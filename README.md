@@ -63,7 +63,7 @@ Fill in the `c45` function to do the following:
     - Otherwise split the data at the best threshold for the best feature. Make an internal (non-leaf) node for that feature and threshold.
     - Create the left and right subtrees of the node by recursing on the two partitions of the data.
 
-### Tune Your Submission [20 points + EXTRA]###
+### Run Your Submission [10 points]###
 
 Once all the basic tests pass it's time to run your algorithm on real data. Download and unzip the spam dataset:
 
@@ -76,7 +76,13 @@ You can do this with the commands:
 
 Also open `test.py` and comment out or delete line 45 so that it runs the final test. This test will train your decision tree on about 20,000 emails labelled as spam and not spam ("ham"). We have set up the the data loader to load the emails and calculate character statistics as features (e.g. the frequency of the letter 'a' or of a '?').
 
-Run `python test.py` again to train your decision tree and calculate your accuracy on the validation data. By default it trains a single tree with a maximum depth of 4. This should get you an accuracy of around 68% at classifying spam, which is ok but not good enough. Make improvements to your submission in the `submission` function to get your accuracy over 70% on the validation data. Describe what you did to increase your accuracy.
+Run `python test.py` again to train your decision tree and calculate your accuracy on the validation data. By default it trains a single tree with a maximum depth of 4. This should get you an accuracy of around 68% at classifying spam.
+
+Tune your `submission` function to get your accuracy over 75% on the validation data. Describe what you did to increase your accuracy. How does changing the maximum depth of the tree affect your accuracy? Write a comment above your `submission` function.
+
+### Perfect Your Submission [10 points + EXTRA]###
+
+Finalize your `submission` function to take a train and test data and return a list of predictions for the test data. You can stick with just training a single decision tree, you could try modifying the c45 algorithm, you could average predictions across multiple decision trees, or you could come up with something new!
 
 After the homework deadline we will run all of your submissions on a test dataset to see who can train the best model. The test data will be different than either the training or validation data so make sure you don't overfit your model too much. Extra points on the homework will be awarded to people with the highest performing algorithms.
 
