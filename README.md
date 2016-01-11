@@ -1,4 +1,4 @@
-# CS 446 Winter 2016 - HW1 Programming Assignment #
+# CS 446 Winter - Programming Assignment 1. [100 points]#
 
 In this assignment you will be implementing the C4.5 decision tree algorithm and running it on real emails to train a spam filter.
 
@@ -10,7 +10,7 @@ You will be modifying the file `tree.py`. Tests for your program are in `test.py
 
 You will see the number of tests your implementation passes and any problems that arise.
 
-### Splitting The Data ###
+### Splitting The Data [10 points]###
 
 Decision trees work by partitioning or splitting the input space into smaller regions. Your program will have to split a dataset into two pieces by determining which points fall on which side of a threshold for some feature.
 
@@ -27,7 +27,7 @@ So `data` is just a list of `Point`s. Each `Point` has a label, in this case "Co
 
 Fill in the `split_data` function so that `left` contains all points whose value for the feature is less than the threshold and `right` contains all the other points.
 
-### Calculating Entropy ###
+### Calculating Entropy [10 points]###
 
 The C4.5 algorithm finds partitions for the data that minimize entropy so we need to be able to calculate entropy. Entropy is given as the sum across all events (in this case classes) of the probability of that event times the log probability of that event:
 
@@ -37,7 +37,7 @@ To calculate the probabilities for each class in a given dataset we first need t
 
 Next fill in `counts_to_entropy` to convert a dictionary of counts to the entropy of the data. Once these two methods are complete, run `python test.py` and make sure the entropy calculation test succeeds.
 
-### Finding The Right Threshold ###
+### Finding The Right Threshold [30 points]###
 
 Given a dataset and some feature to split on, we need to be able to find the best split that gets us the most information gain. One way to do this is to look at every data point and try splitting on that data point's value for the feature. This method is shown in the function `find_best_threshold`.
 
@@ -45,11 +45,11 @@ While this will give the correct answer, it involes re-splitting the data numero
 
 One way to do it is to sort the dataset by the feature we are splitting on. Then we can go through the sorted data in order, moving data points from the `right` split to the `left` and keeping a rolling count of the probabilities of each label. This saves a lot of work when calculating information gain for each split. Implement this method in `find_best_threshold_fast`.
 
-### Finding The Best Split ###
+### Finding The Best Split [10 points]###
 
 Now we can find the best split of the data over some feature but to run C4.5 we want to find the best split over all thresholds and all features. Fill in `find_best_split` to return the best feature and threshold that maximize information gain.
 
-### Finish C4.5 ###
+### Finish C4.5 [20 points]###
 
 Given some training data we don't want to just split it one time, we want to keep going until we can't get any more information gain (or until some maximum tree depth is reached).
 
@@ -58,7 +58,7 @@ Fill in the `c45` function to do the following:
     - Otherwise split the data at the best threshold for the best feature. Make an internal (non-leaf) node for that feature and threshold.
     - Create the left and right subtrees of the node by recursing on the two partitions of the data.
 
-### Tune Your Submission ###
+### Tune Your Submission [20 points + EXTRA]###
 
 Once all the basic tests pass it's time to run your algorithm on real data. Download and unzip the spam dataset:
 
