@@ -61,6 +61,7 @@ Now we can find the best split of the data over some feature but to run C4.5 we 
 Given some training data we don't want to just split it one time, we want to keep going until we can't get any more information gain (or until some maximum tree depth is reached).
 
 Fill in the `c45` function to do the following:
+
     - If all the points have the same label, if no split can provide any information gain, or if the maximum tree depth has been reached, make a leaf with the data, recording the expected value of each label (this is provided in `make_leaf`.
     - Otherwise split the data at the best threshold for the best feature. Make an internal (non-leaf) node for that feature and threshold.
     - Create the left and right subtrees of the node by recursing on the two partitions of the data.
